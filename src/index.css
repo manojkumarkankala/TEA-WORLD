@@ -1,0 +1,113 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-cream-50: #ffffff;
+  --color-cream-100: #fafafa;
+  --color-cream-200: #f4f4f4;
+
+  --color-tea-50: #ffffff;
+  --color-tea-100: #fafafa;
+  --color-tea-200: #f4f4f4;
+  --color-tea-300: #e8e8e8;
+  --color-tea-400: #c9a227;
+  --color-tea-500: #b8941f;
+  --color-tea-600: #9a7a1a;
+  --color-tea-700: #7a6114;
+  --color-tea-800: #5c4910;
+  --color-tea-900: #3d300b;
+
+  --color-amber-50: #fffdf5;
+  --color-amber-100: #fdf6e3;
+  --color-amber-200: #f8ecc5;
+  --color-amber-300: #f0d98a;
+  --color-amber-400: #e6c34b;
+  --color-amber-500: #d4af37;
+  --color-amber-600: #b8941f;
+  --color-amber-700: #9a7a1a;
+
+  --color-clay-50: #fafafa;
+  --color-clay-100: #f0f0f0;
+  --color-clay-200: #e0e0e0;
+  --color-clay-300: #b0b0b0;
+  --color-clay-400: #808080;
+  --color-clay-500: #606060;
+  --color-clay-600: #484848;
+  --color-clay-700: #383838;
+  --color-clay-800: #262626;
+  --color-clay-900: #1a1a1a;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYg7pmYMxw.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream-50);
+  color: var(--color-clay-900);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-amber-400);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-amber-600);
+}
+
+@keyframes steam {
+  0% { transform: translateY(0) scaleX(1); opacity: 0.6; }
+  50% { opacity: 0.3; }
+  100% { transform: translateY(-20px) scaleX(1.5); opacity: 0; }
+}
+.animate-steam {
+  animation: steam 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--color-cream-100) 25%, var(--color-cream-200) 50%, var(--color-cream-100) 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
