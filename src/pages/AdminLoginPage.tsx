@@ -157,7 +157,7 @@ export function AdminLoginPage() {
           </form>
 
           <p className="mt-6 text-center text-xs text-clay-400">
-            Demo password: <span className="font-mono font-semibold text-clay-600">TEAWORLD@123</span>
+            Demo password: <span className="font-mono font-semibold text-clay-600">only admin can open</span>
           </p>
         </div>
       </motion.div>
